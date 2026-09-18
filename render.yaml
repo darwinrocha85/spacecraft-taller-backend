@@ -1,0 +1,22 @@
+services:
+  - type: web
+    name: spacecraft-taller-backend
+    env: python
+    plan: free
+    buildCommand: pip install -r requirements.txt
+    startCommand: uvicorn app.main:app --host 0.0.0.0 --port $PORT
+    envVars:
+      - key: ENVIRONMENT
+        value: production
+      - key: TALLER_DB_PATH
+        value: taller.db
+      - key: AUTO_SEED
+        value: "true"
+      - key: ALLOWED_ORIGINS
+        sync: false
+      - key: TALLER_INTERNAL_API_KEY
+        sync: false
+      - key: BANKIN_API_BASE
+        value: https://bankinback.onrender.com
+      - key: BANKIN_API_KEY
+        sync: false
