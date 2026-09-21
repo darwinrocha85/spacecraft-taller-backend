@@ -10,11 +10,11 @@ LISTA_PARA_SALIR → ENTREGADA`
 
 ## Cómo correr en local
 ```powershell
-.\run-backend.ps1
+.\.venv\Scripts\Activate.ps1
+uvicorn app.main:app --reload --port 8001
 ```
-Levanta en `http://localhost:8001` (docs interactivas en `/docs`). La primera vez crea el
-entorno virtual, instala dependencias, copia `.env.example` a `.env` si no existe y siembra
-repuestos de ejemplo.
+(Instalar una vez: `python -m venv .venv` + activar + `pip install -r requirements.txt` +
+`Copy-Item .env.example .env`. Ver bloques completos en `Projects/RUNBOOK.md`.)
 
 ## Variables de entorno
 Ver `.env.example` (sin valores reales). Las relevantes:
