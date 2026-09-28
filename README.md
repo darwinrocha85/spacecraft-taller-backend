@@ -8,13 +8,15 @@ de `spacecraftSystem` cuando una nave entra al taller, gestiona sus sub-estados 
 `ENVIADA → RECIBIDA → EN_REVISION → EN_TRABAJO → ESPERANDO_APROBACION_PRESUPUESTO →
 LISTA_PARA_SALIR → ENTREGADA`
 
+Levanta en `http://localhost:8001` (docs en `http://localhost:8001/docs`).
+
 ## Cómo correr en local
 ```powershell
 .\.venv\Scripts\Activate.ps1
 uvicorn app.main:app --reload --port 8001
 ```
 (Instalar una vez: `python -m venv .venv` + activar + `pip install -r requirements.txt` +
-`Copy-Item .env.example .env`. Ver bloques completos en `Projects/RUNBOOK.md`.)
+`Copy-Item .env.example .env`. Requiere Python 3.14.)
 
 ## Variables de entorno
 Ver `.env.example` (sin valores reales). Las relevantes:
@@ -31,5 +33,6 @@ pytest
 ```
 
 ## Repos relacionados
-Orquestador: [spacecraftSystem](../spacecraftSystem). Frontend:
-[spacecraft-taller-frontend](../spacecraft-taller-frontend).
+Orquestador: [spacecraftSystem](https://github.com/darwinrocha85/spacecraftSystem). Frontend:
+[spacecraft-taller-frontend](https://github.com/darwinrocha85/spacecraft-taller-frontend).
+IA: [spacecraft-mcp](https://github.com/darwinrocha85/spacecraft-mcp).
